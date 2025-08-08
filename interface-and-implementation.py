@@ -63,3 +63,5 @@ def main():
 	storage.save("Пользователь-4356")
 	data = storage.retrieve(1)
 	storage.close()
+
+
