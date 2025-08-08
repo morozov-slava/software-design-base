@@ -60,8 +60,11 @@ def main():
 
 	# Storage operations
 	storage = OracleDatabaseStorage(config, tablename)
-	storage.save("Пользователь-4356")
-	data = storage.retrieve(1)
+	storage.save("Пользователь-1")
+	storage.save("Пользователь-2")
+	storage.save("Пользователь-3")
+	user_1 = storage.retrieve(0)
+	user_3 = storage.retrieve(2)
 	storage.close()
 
 
