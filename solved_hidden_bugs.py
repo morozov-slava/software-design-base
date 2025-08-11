@@ -6,13 +6,13 @@ class BankAccount:
 		self.balance = initial_balance
 
 	def deposit(self, value: float) -> None:
-		if value < 0:
-			raise AssertionError("Value can't be negative")
+	    if value < 0:
+		    raise AssertionError("Value can't be negative")
 		self.balance += value
 
 	def withdraw(self, value: float) -> None:
 		if value < 0:
-			raise AssertionError("Value can't be negative")
+		    raise AssertionError("Value can't be negative")
 		if self.balance - value < 0:
 			raise AssertionError("Insufficient funds on balance")
 		self.balance -= value
@@ -34,7 +34,7 @@ class TestBankAccount(unittest.TestCase):
         
     def test_deposit_negative_value(self):
         with self.assertRaises(AssertionError):
-              self.account.deposit(-200.0)
+		    self.account.deposit(-200.0)
 			
     def test_withdraw(self):
         self.account.withdraw(200.0)
@@ -42,11 +42,11 @@ class TestBankAccount(unittest.TestCase):
 
     def test_withdraw_insufficient_funds_on_balance(self):
         with self.assertRaises(AssertionError):
-              self.account.withdraw(1200.0)
+		    self.account.withdraw(1200.0)
 
     def test_withdraw_negative_value(self):
         with self.assertRaises(AssertionError):
-              self.account.withdraw(-500.0)
+		    self.account.withdraw(-500.0)
 
     def test_multiple_operations(self):
         self.account.deposit(300.0)
